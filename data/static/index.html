@@ -1,0 +1,86 @@
+<html>
+<meta charset="utf-8" />
+
+<head>
+    <title>LightSequencer</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
+    <link href="/static/lit.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.png">
+
+    <script src="/static/script.js"></script>
+    <data id="sequencelist">~SEQUENCELIST~</data>
+    <style>
+        body {
+            padding-top: 0 !important;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .closebtn {
+            cursor: pointer;
+        }
+
+        progress {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            height: 4px;
+        }
+
+        .opaque {
+            background: white;
+        }
+    </style>
+</head>
+
+<body class="c">
+    <progress id="refreshTimerBar" max="100" value="0"></progress>
+    <h2>Now Playing:</h2>
+    <div class="card">
+        <div class="row">
+            <div class="12 col">
+                ▶
+                <span id="currentSeq" class=" w-100"></span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <h2>Update:</h2>
+    <div class="card">
+        <div class="row">
+            <div class="6 col">
+                Sequence
+                <select id="selectSequence" class="card w-100"></select>
+            </div>
+            <div class="6 col">
+                Speed
+                <select default="Normal" id="selectSpeed" class="card w-100">
+                    <option value="2000">Slow</option>
+                    <option value="1000" selected>Normal</option>
+                    <option value="500">Fast</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="2 col">
+                <button id="btnApply" class="btn primary w-100" onclick="setSeq()">Apply</button>
+            </div>
+            <div class="9 col"></div>
+            <div class="3 col">
+                <button id="btnSetDefault" class="btn w-100" onclick="setDefault()">Set Default</button>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+
+</body>
+
+</html>
